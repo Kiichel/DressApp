@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cardMessageId"
+    android:layout_width="match_parent"
+    android:layout_height="80dp"
+    android:layout_margin="8dp"
+    android:elevation="10dp"
+    app:cardCornerRadius="8dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardViewForRoundImage"
+            android:layout_width="65dp"
+            android:layout_height="65dp"
+            android:layout_margin="8dp"
+            android:elevation="10dp"
+            app:cardCornerRadius="80dp">
+
+            <ImageView
+                android:id="@+id/userImgId"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/white"
+                android:scaleType="centerCrop"
+                android:src="@mipmap/ic_launcher_round" />
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/usernameId"
+            style="@style/TextStyle"
+            android:layout_width="wrap_content"
+            android:layout_marginLeft="6dp"
+            android:layout_marginTop="8dp"
+            android:layout_toRightOf="@+id/cardViewForRoundImage"
+            android:text="Olga Komarova"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/messageTextId"
+            style="@style/TextStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/usernameId"
+            android:layout_marginLeft="6dp"
+            android:layout_toRightOf="@id/cardViewForRoundImage"
+            android:maxLines="2"
+            android:text="@string/lorem" />
+
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>

@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "796071335615",
+    "project_id": "dressapp-e63b3",
+    "storage_bucket": "dressapp-e63b3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:796071335615:android:1ec9e5a4de22afd1f1d80a",
+        "android_client_info": {
+          "package_name": "com.example.dressapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "796071335615-0b8c4oen0tictaqs18bpr77ibahn8bd5.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.dressapp",
+            "certificate_hash": "7100fb3b00b5a72845d5546f012de7133281582d"
+          }
+        },
+        {
+          "client_id": "796071335615-mra0occ1f5q99j23c6kt4k3naohp7l9k.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBTon9FIXnbJk85ggsRcKconZeVJzERxmg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "796071335615-mra0occ1f5q99j23c6kt4k3naohp7l9k.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

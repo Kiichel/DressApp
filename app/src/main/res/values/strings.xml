@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">DressApp</string>
+    <string name="lorem">Lorem ipsum dolor sit amet,
+        consectetur adipiscing elit. Sed a fringilla turpis.
+        Mauris malesuada ante id quam placerat ullamcorper.
+        Phasellus nulla arcu, ultrices nec magna ut, tincidunt vehicula neque.
+        Donec sit amet magna augue. Donec vehicula sollicitudin neque non vestibulum.
+        Praesent accumsan sollicitudin urna quis sollicitudin. Quisque eget vestibulum dolor.
+        Aliquam ac lacus nunc. In eu lacinia dui.</string>
+</resources>
