@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.example.dressapp.R
 
 class MessagesRecyclerViewAdapter(_messages: List<Message>) :
@@ -27,13 +28,18 @@ class MessagesRecyclerViewAdapter(_messages: List<Message>) :
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MessagesHolder {
-        var itemView = LayoutInflater.from(parent.context)
+        val itemView = LayoutInflater.from(parent.context)
             .inflate(R.layout.recyclerview_item, parent, false)
         return MessagesHolder(itemView)
     }
 
     override fun onBindViewHolder(holder: MessagesHolder, position: Int) {
-        holder.userImgId?.setImageResource(R.drawable.ic_launcher_background)
+        holder.userImgId?.let {
+            Glide
+                .with(it.context)
+                .load(messages[position].getImageUrl())
+                .into(it)
+        }
         holder.usernameId?.text = messages[position].getUsername()
         holder.messageTextId?.text = messages[position].getTextMessage()
     }
