@@ -1,6 +1,6 @@
 package Model
 
-class Message(_textMessage: String, _username: String, _imageUrl: String) {
+class Message(_textMessage: String, _username: String, _imageUrl: String?) {
 
     private var textMessage: String
     private var username: String
@@ -9,7 +9,7 @@ class Message(_textMessage: String, _username: String, _imageUrl: String) {
     init {
         textMessage = _textMessage
         username = _username
-        imageUrl = _imageUrl
+        imageUrl = _imageUrl.toString()
     }
 
 

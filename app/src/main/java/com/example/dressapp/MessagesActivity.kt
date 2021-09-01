@@ -21,7 +21,7 @@ class MessagesActivity : AppCompatActivity() {
         recyclerViewMessagesId.adapter = MessagesRecyclerViewAdapter(messages)
     }
 
-    private fun fillMessages(): List<Message> {
+    private fun fillMessages(): List<Message>{
         val imgEva = "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Evelynn_15.jpg"
         val imgKaisa =
             "https://cdn.shazoo.ru/471278_Dtb0IrdeUR_league_of_legends_fendomy_ahri_k.jpeg"
