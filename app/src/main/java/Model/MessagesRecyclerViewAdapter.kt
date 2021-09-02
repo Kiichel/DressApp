@@ -37,11 +37,11 @@ class MessagesRecyclerViewAdapter(_messages: List<Message>) :
         holder.userImgId?.let {
             Glide
                 .with(it.context)
-                .load(messages[position].getImageUrl())
+                .load(messages[position].imageUrl)
                 .into(it)
         }
-        holder.usernameId?.text = messages[position].getUsername()
-        holder.messageTextId?.text = messages[position].getTextMessage()
+        holder.usernameId?.text = messages[position].username
+        holder.messageTextId?.text = messages[position].textMessage
     }
 
     override fun getItemCount() = messages.size

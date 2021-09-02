@@ -12,11 +12,10 @@ import com.example.dressapp.R
 
 class ChatRecyclerViewAdapter(_messages: List<Message>) :
     RecyclerView.Adapter<ChatRecyclerViewAdapter.MessagesHolder>() {
-    private val messages = _messages
+    private var messages = _messages
 
     class MessagesHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         var chatMessageTextId: TextView? = null
-
 
         init {
             chatMessageTextId = itemView.findViewById(R.id.chatText)
@@ -30,9 +29,8 @@ class ChatRecyclerViewAdapter(_messages: List<Message>) :
     }
 
     override fun onBindViewHolder(holder: MessagesHolder, position: Int) {
-        holder.chatMessageTextId?.text = messages[position].getTextMessage()
+        holder.chatMessageTextId?.text = messages[position].textMessage
     }
 
     override fun getItemCount() = messages.size
-
 }
