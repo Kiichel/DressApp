@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="300dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_margin="10dp"
+    app:cardCornerRadius="20dp"
+    android:backgroundTint="@color/backgroundApp"
+    android:id="@+id/cardViewDress">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/dressImageId"
+        android:layout_width="200dp"
+        android:layout_height="match_parent"
+        android:layout_margin="10dp"
+        android:src="@mipmap/ic_launcher_round" />
+
+        <TextView
+            android:id="@+id/dressNameId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Name Dress"
+            style="@style/TextStyle"
+            android:textSize="30sp"
+            android:layout_toRightOf="@+id/dressImageId"
+            android:layout_margin="10dp"/>
+
+        <TextView
+            android:id="@+id/dressPriseId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Prise"
+            style="@style/TextStyle"
+            android:textSize="30sp"
+            android:layout_marginLeft="50dp"
+            android:layout_toRightOf="@+id/dressImageId"
+            android:layout_below="@+id/dressNameId"
+            android:layout_marginTop="150dp"
+            android:gravity="end"/>
+    </RelativeLayout>
+
+
+</androidx.cardview.widget.CardView>

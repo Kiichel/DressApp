@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/backgroundApp"
+    android:gravity="center_horizontal"
+    tools:context=".SignInActivity">
+
+    <TextView
+        android:id="@+id/loginTextId"
+        style="@style/TextStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerInParent="true"
+        android:layout_margin="40dp"
+        android:text="Вход"
+        android:textSize="60sp" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/loginEditId"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+        android:layout_width="300dp"
+        android:layout_height="60dp"
+        android:layout_below="@+id/loginTextId"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="20dp"
+        android:hint="login"
+        app:boxStrokeColor="@color/purple_500">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:inputType="text" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/passEditId"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+        android:layout_width="300dp"
+        android:layout_height="60dp"
+        android:layout_below="@+id/loginEditId"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="20dp"
+        android:hint="password"
+        app:boxStrokeColor="@color/purple_500"
+        app:endIconMode="password_toggle">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:inputType="textPassword" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <Button
+        android:id="@+id/loginButtonId"
+        android:layout_width="200dp"
+        android:layout_height="60dp"
+        android:layout_below="@+id/passEditId"
+        android:layout_centerInParent="true"
+        android:layout_gravity="center"
+        android:layout_marginBottom="7dp"
+        android:elevation="10dp"
+        android:stateListAnimator="@null"
+        android:text="Войти"
+        android:onClick="loginButton"
+        app:backgroundTint="@color/purple_500" />
+
+    <Button
+        android:layout_width="200dp"
+        android:layout_height="60dp"
+        android:layout_below="@+id/loginButtonId"
+        android:layout_centerInParent="true"
+        android:layout_gravity="center"
+        android:elevation="10dp"
+        android:stateListAnimator="@null"
+        android:text="Регистрация"
+        app:backgroundTint="@color/purple_500"
+        app:elevation="20dp"
+        android:onClick="changeRegister"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal">
+
+        <Button
+            android:id="@+id/buttonNext"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton.Icon"
+            android:layout_width="300dp"
+            android:layout_height="60dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="27dp"
+            android:fontFamily="sans-serif-black"
+            android:text="Войти без регистрации"
+            android:textStyle="normal"
+            app:elevation="8dp"
+            app:icon="@drawable/ic_baseline_navigate_next_24"
+            app:iconGravity="end"
+            app:strokeColor="@color/black" />
+    </RelativeLayout>
+
+</RelativeLayout>
