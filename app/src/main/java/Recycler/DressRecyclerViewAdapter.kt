@@ -1,6 +1,6 @@
-package Model
+package Recycler
 
-import android.media.Image
+import Model.Dress
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -28,7 +28,7 @@ class DressRecyclerViewAdapter(_dress: List<Dress>) :
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DressHolder {
         val itemView = LayoutInflater.from(parent.context)
-            .inflate(R.layout.dress_cardview, parent, false)
+            .inflate(R.layout.dress_item, parent, false)
         return DressHolder(itemView)
     }
 

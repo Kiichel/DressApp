@@ -1,6 +1,6 @@
-package Model
+package Recycler
 
-import android.media.Image
+import Model.Message
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -29,7 +29,7 @@ class MessagesRecyclerViewAdapter(_messages: List<Message>) :
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MessagesHolder {
         val itemView = LayoutInflater.from(parent.context)
-            .inflate(R.layout.recyclerview_item, parent, false)
+            .inflate(R.layout.dialog_item, parent, false)
         return MessagesHolder(itemView)
     }
 

@@ -81,7 +81,6 @@
         android:stateListAnimator="@null"
         android:text="Регистрация"
         app:backgroundTint="@color/purple_500"
-        app:elevation="20dp"
         android:onClick="changeRegister"/>
 
     <RelativeLayout
@@ -99,10 +98,10 @@
             android:fontFamily="sans-serif-black"
             android:text="Войти без регистрации"
             android:textStyle="normal"
-            app:elevation="8dp"
             app:icon="@drawable/ic_baseline_navigate_next_24"
             app:iconGravity="end"
-            app:strokeColor="@color/black" />
+            app:strokeColor="@color/black"
+            android:onClick="loginWithoutAuth"/>
     </RelativeLayout>
 
 </RelativeLayout>

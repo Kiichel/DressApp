@@ -1,6 +1,6 @@
 package com.example.dressapp
 
-import Model.ChatRecyclerViewAdapter
+import Recycler.ChatRecyclerViewAdapter
 import Model.Message
 import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
@@ -9,6 +9,7 @@ import android.util.Log
 import android.view.MotionEvent
 import android.view.inputmethod.InputMethodManager
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.google.firebase.auth.ktx.auth
 import com.google.firebase.database.*
 import com.google.firebase.database.ktx.database
 import com.google.firebase.database.ktx.getValue
@@ -20,14 +21,20 @@ class ChatActivity : AppCompatActivity() {
     private lateinit var myRef: DatabaseReference
     private lateinit var chatRecyclerViewAdapter: ChatRecyclerViewAdapter
     private lateinit var messages: MutableList<Message>
+    private lateinit var userName: String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_chat)
 
         database =
-            Firebase.database("https://dressapp-e63b3-default-rtdb.asia-southeast1.firebasedatabase.app/")
+            Firebase.database(Config.DATABASE_URL)
         myRef = database.getReference("message")
+
+        val user = Firebase.auth.currentUser
+        user.let {
+            userName = user?.displayName.toString()
+        }
 
         messages = mutableListOf()
         chatRecyclerViewAdapter = ChatRecyclerViewAdapter(messages)
@@ -37,7 +44,7 @@ class ChatActivity : AppCompatActivity() {
 
         sendMessagesEditTextId.setEndIconOnClickListener {
             val text = send2MessagesEditTextId.text
-            sendMessage("Olga Komarova", text.toString())
+            sendMessage(userName, text.toString())
             send2MessagesEditTextId.text = null
         }
 

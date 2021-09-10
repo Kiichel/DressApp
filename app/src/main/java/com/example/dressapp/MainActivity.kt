@@ -1,35 +1,44 @@
 package com.example.dressapp
 
-import Model.Dress
-import Model.DressRecyclerViewAdapter
-import Model.Message
-import Model.MessagesRecyclerViewAdapter
 import android.annotation.SuppressLint
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
-import android.view.MenuInflater
 import android.view.MenuItem
-import androidx.recyclerview.widget.LinearLayoutManager
-import com.google.firebase.auth.FirebaseAuth
+import com.google.android.material.bottomnavigation.BottomNavigationView
+import androidx.appcompat.app.AppCompatActivity
+import androidx.navigation.findNavController
+import androidx.navigation.ui.AppBarConfiguration
+import androidx.navigation.ui.setupActionBarWithNavController
+import androidx.navigation.ui.setupWithNavController
+import com.example.dressapp.R
+import com.example.dressapp.databinding.ActivityMainBinding
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
-import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.activity_messages.*
 
 class MainActivity : AppCompatActivity() {
-    lateinit var dress: List<Dress>
-    private lateinit var auth: FirebaseAuth
+
+    private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        val i = Intent(this, AddDressActivity::class.java)
+        startActivity(i)
 
-        dress = fillDress()
-        dressRecycler.layoutManager = LinearLayoutManager(this)
-        dressRecycler.adapter = DressRecyclerViewAdapter(dress)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
+        val navView: BottomNavigationView = binding.navView
+
+        val navController = findNavController(R.id.nav_host_fragment_activity_main)
+
+        val appBarConfiguration = AppBarConfiguration(
+            setOf(
+                R.id.navigation_home, R.id.navigation_dashboard, R.id.navigation_notifications
+            )
+        )
+        setupActionBarWithNavController(navController, appBarConfiguration)
+        navView.setupWithNavController(navController)
     }
 
     @SuppressLint("ResourceType")
@@ -40,35 +49,15 @@ class MainActivity : AppCompatActivity() {
         return super.onCreateOptionsMenu(menu)
     }
 
+
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        when(item.itemId){
+        when (item.itemId) {
             R.id.signOut -> {
                 Firebase.auth.signOut()
-                startA()
-            }
-            R.id.cartMenuId ->{
-                val i = Intent(this, CartActivity::class.java)
-                startActivity(i)
             }
 
             else -> super.onOptionsItemSelected(item)
         }
         return true
-    }
-
-    fun startA() {
-        val i = Intent(this, SignInActivity::class.java)
-        startActivity(i)
-    }
-
-    private fun fillDress(): List<Dress>{
-        val dressOne = "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Evelynn_15.jpg"
-        val dressTwo =
-            "https://cdn.shazoo.ru/471278_Dtb0IrdeUR_league_of_legends_fendomy_ahri_k.jpeg"
-
-        return listOf(
-            Dress("Dress1", "20 500", dressOne),
-            Dress("Dress2", "35 999", dressTwo)
-        )
     }
 }

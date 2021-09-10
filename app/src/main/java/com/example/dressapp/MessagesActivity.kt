@@ -1,7 +1,7 @@
 package com.example.dressapp
 
 import Model.Message
-import Model.MessagesRecyclerViewAdapter
+import Recycler.MessagesRecyclerViewAdapter
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager

@@ -1,13 +1,11 @@
-package Model
+package Recycler
 
-import android.media.Image
+import Model.Message
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.Glide
 import com.example.dressapp.R
 
 class ChatRecyclerViewAdapter(_messages: List<Message>) :
@@ -24,7 +22,7 @@ class ChatRecyclerViewAdapter(_messages: List<Message>) :
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MessagesHolder {
         val itemView = LayoutInflater.from(parent.context)
-            .inflate(R.layout.chat_cardview, parent, false)
+            .inflate(R.layout.chat_item, parent, false)
         return MessagesHolder(itemView)
     }
 

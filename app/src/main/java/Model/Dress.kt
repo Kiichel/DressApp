@@ -9,13 +9,18 @@ class Dress() {
     lateinit var dressPrice: String
 
 
-    constructor(_dressName: String, _dressPrise: String, _dressImage: String?) : this() {
+    constructor(_dressName: String, _dressPrice: String, _dressImage: String?) : this() {
         dressName = _dressName
-        dressPrice = _dressPrise
+        dressPrice = _dressPrice
         dressImage = _dressImage.toString()
     }
 
-
-
-
+    @Exclude
+    fun toMap(): Map<String, Any?> {
+        return mapOf(
+            "dressName" to dressName,
+            "dressImage" to dressImage,
+            "dressPrice" to dressPrice
+        )
+    }
 }
