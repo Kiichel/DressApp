@@ -12,7 +12,7 @@
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
         android:layout_width="300dp"
         android:layout_height="60dp"
-        android:hint="name dress"
+        android:hint="@string/dress_name"
         android:layout_marginTop="100dp"
         app:boxStrokeColor="@color/purple_500"
         android:layout_gravity="center">
@@ -30,7 +30,7 @@
         android:layout_height="60dp"
         android:layout_margin="20dp"
         android:layout_gravity="center"
-        android:hint="@string/dress_name"
+        android:hint="@string/dress_price"
         app:boxStrokeColor="@color/purple_500">
 
         <com.google.android.material.textfield.TextInputEditText
